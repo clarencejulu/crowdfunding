@@ -1,0 +1,210 @@
+@use 'data';
+@use 'about';
+
+.body-overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    z-index: 3;
+    // display: flex;
+    // justify-content: center;
+    transition: all ease-in 0.4s;
+}
+
+.back-container{
+    @include data.box;
+    // height: 30rem;
+    // position: sticky;
+    top: 10rem;
+    // overflow-y: scroll;
+    // margin-top: 13rem;
+    padding: 3rem 3rem 2rem;
+    position: relative; 
+    // top: 0;
+    // bottom: 0;
+    // position: fixed;
+    .close-modal{
+        position: fixed;
+        top: 1.8rem;
+        right: 2rem; 
+    }
+    .close-modal:hover{
+        cursor: pointer;
+        path{
+            opacity: 1;
+        }
+    }
+    h3{
+        margin: 0;      
+        font-size: 24px;
+    }
+    .subh3{
+        color: data.$grey-fonts;
+        margin-bottom: 2.3rem;
+    }
+
+    .reward-box{
+        @include about.selection-box;
+        position: relative;
+        .box-content{
+            display: flex;
+            .circle{
+                border-radius: 50%;
+                height: 24px;
+                min-width: 24px;
+                border: 1px solid data.$border;
+                margin-right: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .active-circle{
+                    border-radius: 50%;
+                    height: 12px;
+                    min-width: 12px;
+                    background-color: data.$cyan;
+                    display: none;
+                }
+            }
+            .box-info{
+                display: flex;
+                flex-direction: column;
+                .heading{
+                    display: flex;
+                    justify-content: space-between;
+                    .main-heading{
+                        display: flex;
+                        .product-name{
+                            font-weight: 700;
+                            margin-right: 1rem;
+                        }
+                        .product-pledge{
+                            font-weight: 500;
+                            color: data.$cyan
+                        }
+                    }
+                    .amount-left{
+                        display: flex;
+                        align-items: center;
+                        .amount{
+                            font-size: 18px;
+                            font-weight: 700;
+                            margin-right: 0.3rem;
+                        }
+                        .left{
+                            font-size: 15px;
+                            color: data.$grey-fonts;
+                        }
+                    }
+                }
+                p{
+                    margin: 1.5rem 0 0;
+                    font-size: 0.94rem;
+                    color: data.$grey-fonts;
+                    line-height: 1.75rem;
+                }
+            }
+        }
+        .box-content.hover{
+            .circle{
+                border: 1px solid data.$cyan;
+            }
+            .box-info{
+                .heading{
+                    .main-heading{
+                        .product-name{
+                            color: data.$cyan;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.reward-box.active{
+    padding: 0;
+    border: 2px solid data.$cyan;
+    .box-content{
+        padding: 2rem 2rem 0;
+        .circle{
+            .active-circle{
+                display: block;
+            }
+        }   
+        .box-info{
+            .heading{
+                .main-heading{
+                    .product-pledge{
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+    .enter-pledge{
+        display: flex;
+    }
+}
+
+.enter-pledge{
+    width: 100%;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.2rem;
+    padding: 1.3rem 1.7rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    span{
+        color: data.$grey-fonts;
+        font-size: 15px;
+    }
+    .buttons-container{
+        display: flex;
+        width: 220px; //value of two widths
+        justify-content: space-between;
+        .enter-pledge-buttons{
+            border-radius: 33.5px;
+            height: 48px;
+            font-size: 14px;
+        }
+        .enter-pledge-buttons:hover{
+            border-color: data.$cyan;
+        }
+        .enter-pledge-buttons.focus{
+            border-color: data.$cyan;
+            border-width: 2px;
+        }
+        div{
+            width: 100px;
+            border: 1px solid data.$border;
+            display: flex;
+            align-items: center;
+            
+            .dollar-sign{
+                color: rgba(0, 0, 0, 0.25);
+                margin-left: 20px;
+                margin-right: 7px;
+                font-weight: 700;
+            }
+            input{
+                width: 50px;
+                border: 0;
+                font-weight: 700;
+            }
+        }
+        button{
+            width: 107px;
+            border: none;
+            background-color: data.$cyan;
+            color: white;
+            font-weight: 700;
+        }
+        button:hover{
+            background-color: data.$dark-cyan;
+        }
+    }
+}
+

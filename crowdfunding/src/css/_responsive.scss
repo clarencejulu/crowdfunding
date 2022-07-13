@@ -1,0 +1,178 @@
+@use 'header';
+@use 'data';
+// $width: 78;
+// $screen: 924;
+
+// @while $screen >= 788 { //to place headerFlexBox sensibly
+//     $formedia: $screen * 1px;
+//     @media (max-width: $formedia) {
+//         .header{
+//             .headerFlexBox{
+//                 width: $width * 1%;
+//             }
+//         }
+//     }
+//     $width: $width + 1;
+//     $screen: $screen - 12;
+// }
+.smallScreen-nav{
+    @include data.box;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    @include header.above-overlay;
+    
+    a{
+        text-decoration: none;
+        color: data.$black;
+        font-size: 1.25rem;
+        font-weight: 500;
+        cursor: default;
+        border-bottom: 1px solid data.$grey-elements;
+        padding: 1.6rem;
+        padding-right: 0;
+    }
+    a:last-child{
+        border-bottom: none;
+    }
+    a:hover{
+        
+    }
+}
+
+@media (max-width: 900px) {
+    .header{
+        .headerFlexBox{
+            width: 90%;
+        }
+    }
+}
+
+@media(max-width: 720px){
+    .back-container{
+        .reward-box{
+            .box-info{
+                .heading{
+                    font-size: 0.93rem;
+                    align-items: center;
+                }
+                p{
+                    font-size: 0.87rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 596px){
+    .header{
+        background: url('../images/image-hero-mobile.jpg'), rgb(0, 0, 0, 0.2);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 21.5rem;
+    }
+    .monitor-riser{
+        margin-top: -4rem;
+    }
+    .info-container{
+        .info{
+            .stats{
+                .label{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .about-container{
+        .reward-box{
+            .reward-heading{
+                .pledge{
+                    margin-top: 0.5rem;
+                    margin-bottom: 0.5rem;
+                }
+            }
+            .reward-footer{
+                .amount-left{
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 535px){
+    .monitor-riser{
+        .monitor-riser-info{
+            // padding: 0 1rem 0;
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+            text-align: center;
+            h1{
+                font-size: 20px;
+            }
+            h2{
+                font-size: 14px;
+            }
+            .headerButtons{
+                justify-content: space-around;
+                .bookmarkButton{
+                    // border-radius: 50%;
+                    max-width: 56px;
+                    justify-content: center;
+                    margin-right: 3rem;
+                    // width: 100%;
+                    .bookmarkIcon{
+                        // width: 100%;  
+                    }
+                    span{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .info-container{
+        .info{
+            flex-direction: column;
+            align-items: center;
+            .vertical{
+                min-width: 80px;
+                max-height: 1px;
+                margin: 1.5rem;
+            }
+            .stats{
+                text-align: center;
+                text-indent: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 453px){
+    :root{
+        font-size: 15px;
+    }
+    .monitor-riser{
+        .monitor-riser-info{
+            // padding: 0 1rem 0;
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+    }
+}
+@media (max-width: 424px) {
+    .monitor-riser{
+        .monitor-riser-info{
+            .headerButtons{
+                justify-content: space-between;
+                .pledgeButton{
+                    width: 198px;
+                }
+                .bookmarkButton{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

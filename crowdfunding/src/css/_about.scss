@@ -1,0 +1,95 @@
+@use 'data';
+
+@mixin flex-space-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media(max-width: 596px){
+        flex-direction: column;
+        align-items: flex-start;
+        // justify-content: left;
+    }
+}
+@mixin selection-box{
+    border: 1px solid data.$border;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.about-container{
+    @include data.box;
+    margin-bottom: 0;
+    padding: 3rem 3rem 2rem;
+    h3{
+        margin-top: 0;
+        margin-bottom: 2rem;
+        font-size: 1.25rem;
+    }
+    p{
+        color: data.$grey-fonts;
+        line-height: 1.87rem;
+    }
+    .secondP{
+        margin-bottom: 2.2rem;
+    }
+    .last.reward-box{
+        margin-bottom: 0;
+    }
+    .reward-box{
+        @include selection-box;
+        position: relative;
+        .reward-heading{
+            @include flex-space-items;
+            h4{
+                margin: 0;
+                font-size: 1.13rem;
+            }
+            .pledge{
+                color: data.$cyan;
+                font-size: 0.94rem;
+                font-weight: 500;
+            }
+        }
+        .reward-footer{
+            @include flex-space-items;
+            .amount-left{
+                display: flex;
+                align-items: center;
+                .amount{
+                    font-size: 32px;
+                    font-weight: 700;
+                    margin-right: 0.5rem;
+                }
+                .left{
+                    font-size: 15px;
+                    color: data.$grey-fonts
+                }
+            }
+            button{
+                font-size: 14px;
+                font-weight: 700;
+                width: 157px;
+                height: 48px;
+                border-radius: 33.5px;
+                background-color: data.$cyan;
+                border: none;
+                color: white;
+            }
+            button:hover{
+                background-color: data.$dark-cyan;
+            }
+            button.unavailable{
+                background-color: data.$grey-fonts;
+            }
+        }
+    }
+}
+
+.item-unavailable{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: -2rem; //opposite of reward-box padding
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+}

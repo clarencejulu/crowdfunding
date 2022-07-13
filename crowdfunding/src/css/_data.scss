@@ -1,0 +1,177 @@
+$cyan: #3cb4ac;
+$dark-cyan: #147a74;
+$black: hsl(0, 0%, 0%);
+$grey-fonts: #7a7a7a;
+$grey-elements: #f1f1f1;
+$border: rgba(0,0,0,0.15);
+
+@mixin box{
+    width: 45rem;
+    border-radius: 8px;
+    background-color: white;
+    margin-left: 50%;
+    margin-bottom: 2rem;
+    transform: translateX(-50%);
+    @media (max-width: 720px) {
+        width: 37rem;
+    }
+    @media (max-width: 596px) {
+        width: 33rem;
+    }
+    @media (max-width: 535px) {
+        width: 28rem;
+    }
+    @media (max-width: 424px) {
+        width: 23rem;
+    }
+}
+@mixin positioning ($position, $top){
+    position: $position;
+    left: 50%;
+    top: $top;
+    transform: translate(-50%, -50%);
+}
+@mixin progress-bar{
+    height: 12px;
+    width: 100%;
+    border-radius: 28px;
+}
+
+.monitor-riser{
+    height: 16.5rem;
+    margin-top: -5rem;
+    @include box;
+    position: relative;
+
+    .mastercraft-logo{
+        @include positioning(absolute, 0);
+    }   
+    .monitor-riser-info{
+        padding-top: 2.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1{
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+        }
+        h2{
+            font-size: 16px;
+            font-weight: 400;
+            color: $grey-fonts;
+            text-align: center;
+        }
+        .headerButtons{
+            display: flex;
+            justify-content: space-between;
+            width: 85%;
+            margin-top: 1rem;
+            button{
+                width: 204px;
+                height: 56px;
+                border-radius: 33.5px;
+                border: none; 
+                font-size: 16px; 
+            }
+            .pledgeButton{
+                background-color: $cyan;
+                font-weight: 700;
+                color: white;
+            }
+            .pledgeButton:hover{
+                background-color: $dark-cyan;
+            }
+            .bookmarkButton{
+                display: flex;
+                align-items: center;
+                padding: 0; 
+                // padding-left to allow bookmarkIcon touch the left border
+                background-color: $grey-elements;
+                // .bookmarkIcon{
+                //     // margin-left: 0;
+                // }
+                span{
+                    margin-left: 1rem;
+                    font-weight: 700;
+                    color: $grey-fonts;
+                }
+            }
+            .bookmarkButton:hover{
+                opacity: 0.8;
+            }
+            .bookmarkButton.bookmarked{
+                // background-color: white;
+                span{
+                    color: $dark-cyan;
+                }
+                .bookmarkIcon{
+                    path{
+                        fill: white;
+                    }
+                    circle{
+                        fill: $dark-cyan;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+.info-container{
+    @include box;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    .info{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 2rem;
+        .stats{
+            display: flex;
+            flex-direction: column;
+            flex: 0.35;
+            text-indent: 2.5rem;
+            .digit{
+                font-size: 32px;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+            .label{
+                font-size: 15px;
+                font-weight: 400;
+                color: $grey-fonts;
+            }
+        }
+        .first.stats{
+            flex: 0.3;
+            text-indent: 0;
+        }   
+        .vertical{
+            width: 1px;
+            height: 63px;
+            // height: 1px;
+            // width: 63px;
+            background-color: $border;
+        }
+    }
+
+    .progress-bar{
+        @include progress-bar;
+        background-color: $grey-elements;
+        position: relative;
+        .progress{
+            @include progress-bar;
+            background-color: $cyan;
+            position: absolute;
+            top: 0;
+            left: 0;
+            // width: 80%;
+            // z-index: 2;
+        }
+    }
+    
+}
+
+

@@ -1,0 +1,49 @@
+@use 'data';
+
+.notification{
+    background-color: data.$grey-elements;
+    color: data.$black;
+    padding: 1.2rem 1rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    font-size: 1rem;
+
+    display: none;
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
+}
+
+.thankYouBox{
+    border-radius: 8px;
+    background-color: white;
+    padding: 2.5rem 1rem;
+    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h5{
+        font-weight: 800;
+        font-size: 1.5rem;
+    }
+    p{
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        color: data.$grey-fonts;
+        text-align: center;
+    }
+    button{
+        border-radius: 2.1rem;
+        border: none;
+        color: white;
+        background-color: data.$cyan;
+        padding: 1rem 1.5rem;
+    }
+    button:hover{
+        background-color: data.$dark-cyan;
+    }
+}

@@ -1,0 +1,1208 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+.monitor-riser {
+  height: 16.5rem;
+  margin-top: -5rem;
+  width: 45rem;
+  border-radius: 8px;
+  background-color: white;
+  margin-left: 50%;
+  margin-bottom: 2rem;
+  transform: translateX(-50%);
+  position: relative;
+}
+
+@media (max-width: 720px) {
+  .monitor-riser {
+    width: 37rem;
+  }
+}
+@media (max-width: 596px) {
+  .monitor-riser {
+    width: 33rem;
+  }
+}
+@media (max-width: 535px) {
+  .monitor-riser {
+    width: 28rem;
+  }
+}
+@media (max-width: 424px) {
+  .monitor-riser {
+    width: 23rem;
+  }
+}
+.monitor-riser .mastercraft-logo {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+
+.monitor-riser .monitor-riser-info {
+  padding-top: 2.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.monitor-riser .monitor-riser-info h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.monitor-riser .monitor-riser-info h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #7a7a7a;
+  text-align: center;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin-top: 1rem;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons button {
+  width: 204px;
+  height: 56px;
+  border-radius: 33.5px;
+  border: none;
+  font-size: 16px;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .pledgeButton {
+  background-color: #3cb4ac;
+  font-weight: 700;
+  color: white;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .pledgeButton:hover {
+  background-color: #147a74;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton span {
+  margin-left: 1rem;
+  font-weight: 700;
+  color: #7a7a7a;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton:hover {
+  opacity: 0.8;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton.bookmarked span {
+  color: #147a74;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton.bookmarked .bookmarkIcon path {
+  fill: white;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton.bookmarked .bookmarkIcon circle {
+  fill: #147a74;
+}
+
+.info-container {
+  width: 45rem;
+  border-radius: 8px;
+  background-color: white;
+  margin-left: 50%;
+  margin-bottom: 2rem;
+  transform: translateX(-50%);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 720px) {
+  .info-container {
+    width: 37rem;
+  }
+}
+@media (max-width: 596px) {
+  .info-container {
+    width: 33rem;
+  }
+}
+@media (max-width: 535px) {
+  .info-container {
+    width: 28rem;
+  }
+}
+@media (max-width: 424px) {
+  .info-container {
+    width: 23rem;
+  }
+}
+.info-container .info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.info-container .info .stats {
+  display: flex;
+  flex-direction: column;
+  flex: 0.35;
+  text-indent: 2.5rem;
+}
+
+.info-container .info .stats .digit {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.info-container .info .stats .label {
+  font-size: 15px;
+  font-weight: 400;
+  color: #7a7a7a;
+}
+
+.info-container .info .first.stats {
+  flex: 0.3;
+  text-indent: 0;
+}
+
+.info-container .info .vertical {
+  width: 1px;
+  height: 63px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.info-container .progress-bar {
+  height: 12px;
+  width: 100%;
+  border-radius: 28px;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.info-container .progress-bar .progress {
+  height: 12px;
+  width: 100%;
+  border-radius: 28px;
+  background-color: #3cb4ac;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.about-container {
+  width: 45rem;
+  border-radius: 8px;
+  background-color: white;
+  margin-left: 50%;
+  margin-bottom: 2rem;
+  transform: translateX(-50%);
+  margin-bottom: 0;
+  padding: 3rem 3rem 2rem;
+}
+
+@media (max-width: 720px) {
+  .about-container {
+    width: 37rem;
+  }
+}
+@media (max-width: 596px) {
+  .about-container {
+    width: 33rem;
+  }
+}
+@media (max-width: 535px) {
+  .about-container {
+    width: 28rem;
+  }
+}
+@media (max-width: 424px) {
+  .about-container {
+    width: 23rem;
+  }
+}
+.about-container h3 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+}
+
+.about-container p {
+  color: #7a7a7a;
+  line-height: 1.87rem;
+}
+
+.about-container .secondP {
+  margin-bottom: 2.2rem;
+}
+
+.about-container .last.reward-box {
+  margin-bottom: 0;
+}
+
+.about-container .reward-box {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.about-container .reward-box .reward-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 596px) {
+  .about-container .reward-box .reward-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.about-container .reward-box .reward-heading h4 {
+  margin: 0;
+  font-size: 1.13rem;
+}
+
+.about-container .reward-box .reward-heading .pledge {
+  color: #3cb4ac;
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+
+.about-container .reward-box .reward-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 596px) {
+  .about-container .reward-box .reward-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.about-container .reward-box .reward-footer .amount-left {
+  display: flex;
+  align-items: center;
+}
+
+.about-container .reward-box .reward-footer .amount-left .amount {
+  font-size: 32px;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.about-container .reward-box .reward-footer .amount-left .left {
+  font-size: 15px;
+  color: #7a7a7a;
+}
+
+.about-container .reward-box .reward-footer button {
+  font-size: 14px;
+  font-weight: 700;
+  width: 157px;
+  height: 48px;
+  border-radius: 33.5px;
+  background-color: #3cb4ac;
+  border: none;
+  color: white;
+}
+
+.about-container .reward-box .reward-footer button:hover {
+  background-color: #147a74;
+}
+
+.about-container .reward-box .reward-footer button.unavailable {
+  background-color: #7a7a7a;
+}
+
+.item-unavailable {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: -2rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.body-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: hsla(0deg, 0%, 0%, 0.5);
+  z-index: 3;
+  transition: all ease-in 0.4s;
+}
+
+.back-container {
+  width: 45rem;
+  border-radius: 8px;
+  background-color: white;
+  margin-left: 50%;
+  margin-bottom: 2rem;
+  transform: translateX(-50%);
+  top: 10rem;
+  padding: 3rem 3rem 2rem;
+  position: relative;
+}
+@media (max-width: 720px) {
+  .back-container {
+    width: 37rem;
+  }
+}
+@media (max-width: 596px) {
+  .back-container {
+    width: 33rem;
+  }
+}
+@media (max-width: 535px) {
+  .back-container {
+    width: 28rem;
+  }
+}
+@media (max-width: 424px) {
+  .back-container {
+    width: 23rem;
+  }
+}
+.back-container .close-modal {
+  position: fixed;
+  top: 1.8rem;
+  right: 2rem;
+}
+.back-container .close-modal:hover {
+  cursor: pointer;
+}
+.back-container .close-modal:hover path {
+  opacity: 1;
+}
+.back-container h3 {
+  margin: 0;
+  font-size: 24px;
+}
+.back-container .subh3 {
+  color: #7a7a7a;
+  margin-bottom: 2.3rem;
+}
+.back-container .reward-box {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.back-container .reward-box .box-content {
+  display: flex;
+}
+.back-container .reward-box .box-content .circle {
+  border-radius: 50%;
+  height: 24px;
+  min-width: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back-container .reward-box .box-content .circle .active-circle {
+  border-radius: 50%;
+  height: 12px;
+  min-width: 12px;
+  background-color: #3cb4ac;
+  display: none;
+}
+.back-container .reward-box .box-content .box-info {
+  display: flex;
+  flex-direction: column;
+}
+.back-container .reward-box .box-content .box-info .heading {
+  display: flex;
+  justify-content: space-between;
+}
+.back-container .reward-box .box-content .box-info .heading .main-heading {
+  display: flex;
+}
+.back-container .reward-box .box-content .box-info .heading .main-heading .product-name {
+  font-weight: 700;
+  margin-right: 1rem;
+}
+.back-container .reward-box .box-content .box-info .heading .main-heading .product-pledge {
+  font-weight: 500;
+  color: #3cb4ac;
+}
+.back-container .reward-box .box-content .box-info .heading .amount-left {
+  display: flex;
+  align-items: center;
+}
+.back-container .reward-box .box-content .box-info .heading .amount-left .amount {
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 0.3rem;
+}
+.back-container .reward-box .box-content .box-info .heading .amount-left .left {
+  font-size: 15px;
+  color: #7a7a7a;
+}
+.back-container .reward-box .box-content .box-info p {
+  margin: 1.5rem 0 0;
+  font-size: 0.94rem;
+  color: #7a7a7a;
+  line-height: 1.75rem;
+}
+.back-container .reward-box .box-content.hover .circle {
+  border: 1px solid #3cb4ac;
+}
+.back-container .reward-box .box-content.hover .box-info .heading .main-heading .product-name {
+  color: #3cb4ac;
+}
+
+.reward-box.active {
+  padding: 0;
+  border: 2px solid #3cb4ac;
+}
+.reward-box.active .box-content {
+  padding: 2rem 2rem 0;
+}
+.reward-box.active .box-content .circle .active-circle {
+  display: block;
+}
+.reward-box.active .box-content .box-info .heading .main-heading .product-pledge {
+  font-weight: 700;
+}
+.reward-box.active .enter-pledge {
+  display: flex;
+}
+
+.enter-pledge {
+  width: 100%;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+  padding: 1.3rem 1.7rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+.enter-pledge span {
+  color: #7a7a7a;
+  font-size: 15px;
+}
+.enter-pledge .buttons-container {
+  display: flex;
+  width: 220px;
+  justify-content: space-between;
+}
+.enter-pledge .buttons-container .enter-pledge-buttons {
+  border-radius: 33.5px;
+  height: 48px;
+  font-size: 14px;
+}
+.enter-pledge .buttons-container .enter-pledge-buttons:hover {
+  border-color: #3cb4ac;
+}
+.enter-pledge .buttons-container .enter-pledge-buttons.focus {
+  border-color: #3cb4ac;
+  border-width: 2px;
+}
+.enter-pledge .buttons-container div {
+  width: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+}
+.enter-pledge .buttons-container div .dollar-sign {
+  color: rgba(0, 0, 0, 0.25);
+  margin-left: 20px;
+  margin-right: 7px;
+  font-weight: 700;
+}
+.enter-pledge .buttons-container div input {
+  width: 50px;
+  border: 0;
+  font-weight: 700;
+}
+.enter-pledge .buttons-container button {
+  width: 107px;
+  border: none;
+  background-color: #3cb4ac;
+  color: white;
+  font-weight: 700;
+}
+.enter-pledge .buttons-container button:hover {
+  background-color: #147a74;
+}
+
+.monitor-riser {
+  height: 16.5rem;
+  margin-top: -5rem;
+  width: 45rem;
+  border-radius: 8px;
+  background-color: white;
+  margin-left: 50%;
+  margin-bottom: 2rem;
+  transform: translateX(-50%);
+  position: relative;
+}
+
+@media (max-width: 720px) {
+  .monitor-riser {
+    width: 37rem;
+  }
+}
+@media (max-width: 596px) {
+  .monitor-riser {
+    width: 33rem;
+  }
+}
+@media (max-width: 535px) {
+  .monitor-riser {
+    width: 28rem;
+  }
+}
+@media (max-width: 424px) {
+  .monitor-riser {
+    width: 23rem;
+  }
+}
+.monitor-riser .mastercraft-logo {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+
+.monitor-riser .monitor-riser-info {
+  padding-top: 2.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.monitor-riser .monitor-riser-info h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.monitor-riser .monitor-riser-info h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #7a7a7a;
+  text-align: center;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin-top: 1rem;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons button {
+  width: 204px;
+  height: 56px;
+  border-radius: 33.5px;
+  border: none;
+  font-size: 16px;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .pledgeButton {
+  background-color: #3cb4ac;
+  font-weight: 700;
+  color: white;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .pledgeButton:hover {
+  background-color: #147a74;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton span {
+  margin-left: 1rem;
+  font-weight: 700;
+  color: #7a7a7a;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton:hover {
+  opacity: 0.8;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton.bookmarked span {
+  color: #147a74;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton.bookmarked .bookmarkIcon path {
+  fill: white;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton.bookmarked .bookmarkIcon circle {
+  fill: #147a74;
+}
+
+.info-container {
+  width: 45rem;
+  border-radius: 8px;
+  background-color: white;
+  margin-left: 50%;
+  margin-bottom: 2rem;
+  transform: translateX(-50%);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 720px) {
+  .info-container {
+    width: 37rem;
+  }
+}
+@media (max-width: 596px) {
+  .info-container {
+    width: 33rem;
+  }
+}
+@media (max-width: 535px) {
+  .info-container {
+    width: 28rem;
+  }
+}
+@media (max-width: 424px) {
+  .info-container {
+    width: 23rem;
+  }
+}
+.info-container .info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.info-container .info .stats {
+  display: flex;
+  flex-direction: column;
+  flex: 0.35;
+  text-indent: 2.5rem;
+}
+
+.info-container .info .stats .digit {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.info-container .info .stats .label {
+  font-size: 15px;
+  font-weight: 400;
+  color: #7a7a7a;
+}
+
+.info-container .info .first.stats {
+  flex: 0.3;
+  text-indent: 0;
+}
+
+.info-container .info .vertical {
+  width: 1px;
+  height: 63px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.info-container .progress-bar {
+  height: 12px;
+  width: 100%;
+  border-radius: 28px;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.info-container .progress-bar .progress {
+  height: 12px;
+  width: 100%;
+  border-radius: 28px;
+  background-color: #3cb4ac;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.notification {
+  background-color: #f1f1f1;
+  color: hsl(0deg, 0%, 0%);
+  padding: 1.2rem 1rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  display: none;
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+}
+
+.thankYouBox {
+  border-radius: 8px;
+  background-color: white;
+  padding: 2.5rem 1rem;
+  width: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.thankYouBox h5 {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.thankYouBox p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #7a7a7a;
+  text-align: center;
+}
+.thankYouBox button {
+  border-radius: 2.1rem;
+  border: none;
+  color: white;
+  background-color: #3cb4ac;
+  padding: 1rem 1.5rem;
+}
+.thankYouBox button:hover {
+  background-color: #147a74;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Commissioner", sans-serif;
+  outline: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #fafafa;
+  position: relative;
+  padding-bottom: 1rem;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.header {
+  background: url("../images/image-hero-desktop.jpg"), rgba(0, 0, 0, 0.2);
+  background-blend-mode: darken;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 23.5rem;
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 3rem 0 0;
+}
+
+.header .headerFlexBox {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 80%;
+}
+
+.header .headerFlexBox .logo {
+  position: relative;
+  z-index: 4;
+}
+
+.header .headerFlexBox nav {
+  display: flex;
+  justify-content: space-between;
+  width: 14rem;
+}
+
+.header .headerFlexBox nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: default;
+}
+
+.header .headerFlexBox nav a:hover {
+  -webkit-text-decoration: 1px underline solid white;
+          text-decoration: 1px underline solid white;
+}
+
+.header .headerFlexBox .menu-container {
+  cursor: pointer;
+  position: relative;
+  z-index: 4;
+}
+
+.monitor-riser {
+  height: 16.5rem;
+  margin-top: -5rem;
+  width: 45rem;
+  border-radius: 8px;
+  background-color: white;
+  margin-left: 50%;
+  margin-bottom: 2rem;
+  transform: translateX(-50%);
+  position: relative;
+}
+
+@media (max-width: 720px) {
+  .monitor-riser {
+    width: 37rem;
+  }
+}
+@media (max-width: 596px) {
+  .monitor-riser {
+    width: 33rem;
+  }
+}
+@media (max-width: 535px) {
+  .monitor-riser {
+    width: 28rem;
+  }
+}
+@media (max-width: 424px) {
+  .monitor-riser {
+    width: 23rem;
+  }
+}
+.monitor-riser .mastercraft-logo {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+
+.monitor-riser .monitor-riser-info {
+  padding-top: 2.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.monitor-riser .monitor-riser-info h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.monitor-riser .monitor-riser-info h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #7a7a7a;
+  text-align: center;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin-top: 1rem;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons button {
+  width: 204px;
+  height: 56px;
+  border-radius: 33.5px;
+  border: none;
+  font-size: 16px;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .pledgeButton {
+  background-color: #3cb4ac;
+  font-weight: 700;
+  color: white;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .pledgeButton:hover {
+  background-color: #147a74;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton span {
+  margin-left: 1rem;
+  font-weight: 700;
+  color: #7a7a7a;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton:hover {
+  opacity: 0.8;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton.bookmarked span {
+  color: #147a74;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton.bookmarked .bookmarkIcon path {
+  fill: white;
+}
+
+.monitor-riser .monitor-riser-info .headerButtons .bookmarkButton.bookmarked .bookmarkIcon circle {
+  fill: #147a74;
+}
+
+.info-container {
+  width: 45rem;
+  border-radius: 8px;
+  background-color: white;
+  margin-left: 50%;
+  margin-bottom: 2rem;
+  transform: translateX(-50%);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 720px) {
+  .info-container {
+    width: 37rem;
+  }
+}
+@media (max-width: 596px) {
+  .info-container {
+    width: 33rem;
+  }
+}
+@media (max-width: 535px) {
+  .info-container {
+    width: 28rem;
+  }
+}
+@media (max-width: 424px) {
+  .info-container {
+    width: 23rem;
+  }
+}
+.info-container .info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.info-container .info .stats {
+  display: flex;
+  flex-direction: column;
+  flex: 0.35;
+  text-indent: 2.5rem;
+}
+
+.info-container .info .stats .digit {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.info-container .info .stats .label {
+  font-size: 15px;
+  font-weight: 400;
+  color: #7a7a7a;
+}
+
+.info-container .info .first.stats {
+  flex: 0.3;
+  text-indent: 0;
+}
+
+.info-container .info .vertical {
+  width: 1px;
+  height: 63px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.info-container .progress-bar {
+  height: 12px;
+  width: 100%;
+  border-radius: 28px;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.info-container .progress-bar .progress {
+  height: 12px;
+  width: 100%;
+  border-radius: 28px;
+  background-color: #3cb4ac;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.smallScreen-nav {
+  width: 45rem;
+  border-radius: 8px;
+  background-color: white;
+  margin-left: 50%;
+  margin-bottom: 2rem;
+  transform: translateX(-50%);
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 4;
+}
+@media (max-width: 720px) {
+  .smallScreen-nav {
+    width: 37rem;
+  }
+}
+@media (max-width: 596px) {
+  .smallScreen-nav {
+    width: 33rem;
+  }
+}
+@media (max-width: 535px) {
+  .smallScreen-nav {
+    width: 28rem;
+  }
+}
+@media (max-width: 424px) {
+  .smallScreen-nav {
+    width: 23rem;
+  }
+}
+.smallScreen-nav a {
+  text-decoration: none;
+  color: hsl(0deg, 0%, 0%);
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: default;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 1.6rem;
+  padding-right: 0;
+}
+.smallScreen-nav a:last-child {
+  border-bottom: none;
+}
+@media (max-width: 900px) {
+  .header .headerFlexBox {
+    width: 90%;
+  }
+}
+@media (max-width: 720px) {
+  .back-container .reward-box .box-info .heading {
+    font-size: 0.93rem;
+    align-items: center;
+  }
+  .back-container .reward-box .box-info p {
+    font-size: 0.87rem;
+  }
+}
+@media (max-width: 596px) {
+  .header {
+    background: url("../images/image-hero-mobile.jpg"), rgba(0, 0, 0, 0.2);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 21.5rem;
+  }
+
+  .monitor-riser {
+    margin-top: -4rem;
+  }
+
+  .info-container .info .stats .label {
+    font-size: 14px;
+  }
+
+  .about-container .reward-box .reward-heading .pledge {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .about-container .reward-box .reward-footer .amount-left {
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 535px) {
+  .monitor-riser .monitor-riser-info {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    text-align: center;
+  }
+  .monitor-riser .monitor-riser-info h1 {
+    font-size: 20px;
+  }
+  .monitor-riser .monitor-riser-info h2 {
+    font-size: 14px;
+  }
+  .monitor-riser .monitor-riser-info .headerButtons {
+    justify-content: space-around;
+  }
+  .monitor-riser .monitor-riser-info .headerButtons .bookmarkButton {
+    max-width: 56px;
+    justify-content: center;
+    margin-right: 3rem;
+  }
+  .monitor-riser .monitor-riser-info .headerButtons .bookmarkButton span {
+    display: none;
+  }
+
+  .info-container .info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-container .info .vertical {
+    min-width: 80px;
+    max-height: 1px;
+    margin: 1.5rem;
+  }
+  .info-container .info .stats {
+    text-align: center;
+    text-indent: 0;
+  }
+}
+@media (max-width: 453px) {
+  :root {
+    font-size: 15px;
+  }
+
+  .monitor-riser .monitor-riser-info {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+@media (max-width: 424px) {
+  .monitor-riser .monitor-riser-info .headerButtons {
+    justify-content: space-between;
+  }
+  .monitor-riser .monitor-riser-info .headerButtons .pledgeButton {
+    width: 198px;
+  }
+  .monitor-riser .monitor-riser-info .headerButtons .bookmarkButton {
+    margin-right: 0;
+  }
+}/*# sourceMappingURL=App.css.map */

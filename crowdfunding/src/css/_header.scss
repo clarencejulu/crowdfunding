@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+$body: #fafafa;
+
+@mixin above-overlay{
+    position: relative; //to use Z
+    z-index: 4;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Commissioner', sans-serif;
+    outline: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    background-color: $body;
+    position: relative;
+    padding-bottom: 1rem;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.header{
+    background: url('../images/image-hero-desktop.jpg'), rgb(0, 0, 0, 0.2);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 23.5rem;
+    width: 100%;
+    user-select: none;
+    padding: 3rem 0 0;
+    
+    .headerFlexBox{
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        // align-items: center; 
+        width: 80%;
+        .logo{
+            @include above-overlay;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            width: 14rem;
+            a{
+                text-decoration: none;
+                color: white;
+                font-size: 13px;
+                font-weight: 500;
+                cursor: default;
+            }
+            a:hover{
+                text-decoration: 1px underline solid white;
+            }
+        }
+        .menu-container{
+            cursor: pointer;
+            @include above-overlay;
+        }
+    }
+}

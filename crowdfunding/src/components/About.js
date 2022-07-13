@@ -1,0 +1,22 @@
+import React, { useContext } from 'react';
+import { GlobalContext } from '../context/GlobalState';
+import RewardBox from './RewardBox';
+
+export const About = () => {
+    const {rewards} = useContext(GlobalContext);
+
+  return (
+    <section className='about-container' id='about'>
+      <h3>About this project</h3>
+      <p>The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen 
+      to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve 
+      your posture and make you more comfortable while at work, helping you stay focused on the task at hand.</p>
+      <p className='secondP'>Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
+      to allow notepads, pens, and USB sticks to be stored under the stand.</p>
+
+      { rewards
+      .filter(reward => !(reward.name.toLowerCase().includes("pledge with no reward")))
+      .map((reward, id) => <RewardBox key={id} reward={reward} />) }
+    </section>
+  )
+}
