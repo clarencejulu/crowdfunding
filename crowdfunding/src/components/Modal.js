@@ -13,11 +13,11 @@ export const Modal = () => {
 
   return (
     <div className="back-container" id='modal'>
-        <Close className='close-modal' onClick={() => dispatch(offModal())}/>
-        <h3>Back this project</h3>
-        <p className="subh3">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
-        
-        {rewards.map((reward, id) => <RewardBoxModal key={id} reward={reward} />)}
+      <Close className='close-modal' onClick={() => dispatch(offModal())}/>
+      <h3>Back this project</h3>
+      <p className="subh3">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+      
+      {rewards.map((reward, id) => <RewardBoxModal key={id} reward={reward} />)}
     </div>
   )
 }

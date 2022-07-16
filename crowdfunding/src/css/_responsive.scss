@@ -49,17 +49,16 @@
 }
 
 @media(max-width: 720px){
-    .back-container{
-        .reward-box{
-            .box-info{
-                .heading{
-                    font-size: 0.93rem;
-                    align-items: center;
-                }
-                p{
-                    font-size: 0.87rem;
-                }
-            }
+
+    .box-content{
+        .not-first.circle{
+            margin-top: 0.4rem;
+        }
+        .main-heading{
+            flex-direction: column; 
+            .product-pledge{
+                margin-top: 0.4rem;
+            }      
         }
     }
 }
@@ -147,6 +146,32 @@
             }
         }
     }
+    .back-container{
+        .close-modal{
+            top: 3rem;
+            transform: translateY(50%);
+        }
+        .reward-box{
+            .box-content{
+                grid-template-areas: 
+                    'circle heading heading heading'
+                    'description description description description'
+                    'amount-left . . .';
+                grid-template-columns: 2.5rem 1fr 1fr 1fr;
+                .amount-left{
+                    margin: 1rem 0 0;
+                }
+            }
+        }
+        .reward-box.active{
+            .enter-pledge{
+                flex-direction: column;
+                .buttons-container{
+                    margin-top: 1.3rem;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 453px){
@@ -175,4 +200,31 @@
             }
         }
     }
+    
+    .back-container{
+        padding: 2rem 1.5rem 2rem;
+        .close-modal{
+            top: 2rem;
+        }
+        .reward-box{
+            .box-content{
+                // grid-template-areas: 
+                //     'circle heading heading heading'
+                //     'description description description description'
+                //     'amount-left . . . ';
+                .circle{
+                    // margin-right: 0;
+                }
+                .main-heading{
+                    // margin-left: -2rem;
+                }
+            }
+        }
+    }
+        // .main-heading{
+        //     flex-direction: column; 
+        //     .product-pledge{
+        //         margin-top: 0.4rem;
+        //     }      
+        // }
 }

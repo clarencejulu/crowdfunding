@@ -103,30 +103,26 @@ const RewardBoxModal = ({reward}) => {
     <div className={ name.toLowerCase().includes("mahogany") ? 'last reward-box' : 'reward-box'} id={name}>
         <div className="item-unavailable" style={remaining !== 0 ? {display: "none"} : {display: "block"}}></div>
         <div className="box-content">
-            <div className='circle' onMouseOver={(event)=>onHover(event)} onMouseOut={(event)=>offHover(event)} 
+            <div className={(!(name.toLowerCase().includes("pledge"))) ? 'not-first circle' : 'circle'} onMouseOver={(event)=>onHover(event)} onMouseOut={(event)=>offHover(event)} 
             onClick={() => dispatch(activateModal({id: name, fromModal: false,}))}
             >
                 <div className='active-circle' />
             </div>
-            <div className="box-info">
-                <div className='heading'>
-                    <div className='main-heading'>
-                        <span className="product-name">{name}</span>
-                        {price === null ? "" : <span className="product-pledge">Pledge ${price} or more</span>}
-                    </div>
-                    {remaining === null ? "" : <div className="amount-left"><span className="amount">{remaining}</span> <span className="left">left</span></div>}
-                </div>
-                <p>{description}</p>
+            <div className='main-heading'>
+                <span className="product-name">{name}</span>
+                {price === null ? "" : <span className="product-pledge">Pledge ${price} or more</span>}
             </div>
+            {remaining === null ? "" : <div className="amount-left"><span className="amount">{remaining}</span> <span className="left">left</span></div>}
+            <div className="description-container"><p>{description}</p></div>
         </div>
         <div className="enter-pledge" id="enter-pledge">
             <span>Enter your pledge</span>
             <div className="buttons-container">
-            <div className="enter-pledge-buttons" id={pledgeButtonId} onClick={(event) => toMakeInputActive(event)}>
-                <span className="dollar-sign">$</span>
-                <input type="number" id={inputId} value={donation} min={price !== null ? price : 1} onKeyDown={(event) => event.key==='.' ? event.preventDefault() : null} onChange={(event) => changeDonation(event.target.value)}></input>
-            </div>
-            <button className="enter-pledge-buttons" onClick={() => executeSelection()}>Continue</button>
+                <div className="enter-pledge-buttons" id={pledgeButtonId} onClick={(event) => toMakeInputActive(event)}>
+                    <span className="dollar-sign">$</span>
+                    <input type="number" id={inputId} value={donation} min={price !== null ? price : 1} onKeyDown={(event) => event.key==='.' ? event.preventDefault() : null} onChange={(event) => changeDonation(event.target.value)}></input>
+                </div>
+                <button className="enter-pledge-buttons" onClick={() => executeSelection()}>Continue</button>
             </div>
         </div>
     </div>   

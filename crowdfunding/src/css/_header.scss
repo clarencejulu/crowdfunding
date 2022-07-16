@@ -61,7 +61,9 @@ body{
         }
         .menu-container{
             cursor: pointer;
-            @include above-overlay;
+            .closeMenu{
+                @include above-overlay;
+            }
         }
     }
 }

@@ -47,3 +47,19 @@
         background-color: data.$dark-cyan;
     }
 }
+
+@media (max-width: 596px) {
+    .thankYouBox{
+        width: 33rem;
+    }
+}
+@media (max-width: 535px) {
+    .thankYouBox{
+        width: 28rem;
+    }  
+}
+@media (max-width: 424px) {
+    .thankYouBox{
+        width: 23rem;
+    }   
+}

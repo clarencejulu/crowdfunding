@@ -396,6 +396,7 @@
 .back-container .subh3 {
   color: #7a7a7a;
   margin-bottom: 2.3rem;
+  line-height: 1.5rem;
 }
 .back-container .reward-box {
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -405,12 +406,14 @@
   position: relative;
 }
 .back-container .reward-box .box-content {
-  display: flex;
+  display: grid;
+  grid-template-areas: "circle heading heading . amount-left" "circle description description description description";
 }
 .back-container .reward-box .box-content .circle {
+  grid-area: circle;
   border-radius: 50%;
   height: 24px;
-  min-width: 24px;
+  width: 24px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   margin-right: 1rem;
   display: flex;
@@ -420,47 +423,49 @@
 .back-container .reward-box .box-content .circle .active-circle {
   border-radius: 50%;
   height: 12px;
-  min-width: 12px;
+  width: 12px;
   background-color: #3cb4ac;
   display: none;
+  align-self: center;
 }
-.back-container .reward-box .box-content .box-info {
-  display: flex;
-  flex-direction: column;
-}
-.back-container .reward-box .box-content .box-info .heading {
-  display: flex;
-  justify-content: space-between;
-}
-.back-container .reward-box .box-content .box-info .heading .main-heading {
+.back-container .reward-box .box-content .main-heading {
+  grid-area: heading;
   display: flex;
 }
-.back-container .reward-box .box-content .box-info .heading .main-heading .product-name {
+.back-container .reward-box .box-content .main-heading .product-name {
   font-weight: 700;
   margin-right: 1rem;
 }
-.back-container .reward-box .box-content .box-info .heading .main-heading .product-pledge {
+.back-container .reward-box .box-content .main-heading .product-pledge {
   font-weight: 500;
   color: #3cb4ac;
 }
-.back-container .reward-box .box-content .box-info .heading .amount-left {
+.back-container .reward-box .box-content .amount-left {
+  grid-area: amount-left;
   display: flex;
   align-items: center;
+  margin: 0;
 }
-.back-container .reward-box .box-content .box-info .heading .amount-left .amount {
+.back-container .reward-box .box-content .amount-left .amount {
   font-size: 18px;
   font-weight: 700;
   margin-right: 0.3rem;
 }
-.back-container .reward-box .box-content .box-info .heading .amount-left .left {
+.back-container .reward-box .box-content .amount-left .left {
   font-size: 15px;
   color: #7a7a7a;
 }
-.back-container .reward-box .box-content .box-info p {
-  margin: 1.5rem 0 0;
+.back-container .reward-box .box-content .description-container {
+  grid-area: description;
+  margin: 1rem 0 0;
+}
+.back-container .reward-box .box-content .description-container p {
+  display: inline;
+  margin: 0;
   font-size: 0.94rem;
   color: #7a7a7a;
   line-height: 1.75rem;
+  width: 100%;
 }
 .back-container .reward-box .box-content.hover .circle {
   border: 1px solid #3cb4ac;
@@ -791,6 +796,21 @@
   background-color: #147a74;
 }
 
+@media (max-width: 596px) {
+  .thankYouBox {
+    width: 33rem;
+  }
+}
+@media (max-width: 535px) {
+  .thankYouBox {
+    width: 28rem;
+  }
+}
+@media (max-width: 424px) {
+  .thankYouBox {
+    width: 23rem;
+  }
+}
 * {
   box-sizing: border-box;
   font-family: "Commissioner", sans-serif;
@@ -858,6 +878,9 @@ body {
 
 .header .headerFlexBox .menu-container {
   cursor: pointer;
+}
+
+.header .headerFlexBox .menu-container .closeMenu {
   position: relative;
   z-index: 4;
 }
@@ -1114,12 +1137,14 @@ body {
   }
 }
 @media (max-width: 720px) {
-  .back-container .reward-box .box-info .heading {
-    font-size: 0.93rem;
-    align-items: center;
+  .box-content .not-first.circle {
+    margin-top: 0.4rem;
   }
-  .back-container .reward-box .box-info p {
-    font-size: 0.87rem;
+  .box-content .main-heading {
+    flex-direction: column;
+  }
+  .box-content .main-heading .product-pledge {
+    margin-top: 0.4rem;
   }
 }
 @media (max-width: 596px) {
@@ -1130,15 +1155,12 @@ body {
     background-size: cover;
     height: 21.5rem;
   }
-
   .monitor-riser {
     margin-top: -4rem;
   }
-
   .info-container .info .stats .label {
     font-size: 14px;
   }
-
   .about-container .reward-box .reward-heading .pledge {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -1170,7 +1192,6 @@ body {
   .monitor-riser .monitor-riser-info .headerButtons .bookmarkButton span {
     display: none;
   }
-
   .info-container .info {
     flex-direction: column;
     align-items: center;
@@ -1184,12 +1205,28 @@ body {
     text-align: center;
     text-indent: 0;
   }
+  .back-container .close-modal {
+    top: 3rem;
+    transform: translateY(50%);
+  }
+  .back-container .reward-box .box-content {
+    grid-template-areas: "circle heading heading heading" "description description description description" "amount-left . . .";
+    grid-template-columns: 2.5rem 1fr 1fr 1fr;
+  }
+  .back-container .reward-box .box-content .amount-left {
+    margin: 1rem 0 0;
+  }
+  .back-container .reward-box.active .enter-pledge {
+    flex-direction: column;
+  }
+  .back-container .reward-box.active .enter-pledge .buttons-container {
+    margin-top: 1.3rem;
+  }
 }
 @media (max-width: 453px) {
   :root {
     font-size: 15px;
   }
-
   .monitor-riser .monitor-riser-info {
     padding-right: 1rem;
     padding-left: 1rem;
@@ -1204,5 +1241,11 @@ body {
   }
   .monitor-riser .monitor-riser-info .headerButtons .bookmarkButton {
     margin-right: 0;
+  }
+  .back-container {
+    padding: 2rem 1.5rem 2rem;
+  }
+  .back-container .close-modal {
+    top: 2rem;
   }
 }/*# sourceMappingURL=App.css.map */
