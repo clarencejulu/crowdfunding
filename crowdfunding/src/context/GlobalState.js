@@ -19,11 +19,9 @@ export const GlobalProvider = ({ children }) => {
             else{
                 setStats(data);
             }
-            // console.log(data);
         }
         getData(rewardURL);
         getData(statsURL);
-
     }, []);
     
   return (

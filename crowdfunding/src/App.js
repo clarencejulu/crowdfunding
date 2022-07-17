@@ -9,12 +9,10 @@ import { GlobalProvider } from './context/GlobalState';
 import {useDispatch} from 'react-redux';
 import {makeInputInactive} from './features/activeSlice';
 import { ThankYou } from './components/ThankYou';
-// import {Menu} from '.components/Menu';
 
 function App() {
   const isOn = useSelector(state => state.modal.on);
   const isThankYou = useSelector(state => state.modal.thankYou);
-  // const isMenu = useSelector(state => state.modal.menu);
 
   const dispatch  = useDispatch();
   return (
@@ -22,7 +20,6 @@ function App() {
       <div id='container' onClick={() => dispatch(makeInputInactive())}>
         {isOn ? <Modal /> : ""}
         {isThankYou ? <ThankYou /> : ""}
-        {/* {isMenu ? <Menu /> : ""} */}
         <div id="wrongValue" className='notification'></div>
       </div>
       <Header />

@@ -1,6 +1,4 @@
-# Frontend Mentor - Crowdfunding product page solution
-
-This is a solution to the [Crowdfunding product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/crowdfunding-product-page-7uvcZe7ZR). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+# Crowdfunding Product Page Project
 
 ## Table of contents
 
@@ -16,8 +14,6 @@ This is a solution to the [Crowdfunding product page challenge on Frontend Mento
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -25,91 +21,137 @@ This is a solution to the [Crowdfunding product page challenge on Frontend Mento
 Users should be able to:
 
 - View the optimal layout depending on their device's screen size
-- See hover states for interactive elements
 - Make a selection of which pledge to make
+- Make pledges with just numbers (integers)
 - See an updated progress bar and total money raised based on their pledge total after confirming a pledge
-- See the number of total backers increment by one after confirming a pledge
-- Toggle whether or not the product is bookmarked
+- See the number of total backers increment by one 
+- See the number of items left decrease by 1 and also show if that item is out of stock
+- Toggle whether or not the product is bookmarked and store the status
+- Store all necessary information in a JSON file
 
 ### Screenshot
 
-![](./screenshot.jpg)
+- Desktop Images
+  - [Design](/design/desktop-design.jpg)
+  - [Modal Selected](/design/desktop-design-modal-selected.jpg)
+  - [Modal Completed](/design/desktop-design-modal-completed.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+- Mobile Images
+  - [Design](/design/mobile-design.jpg)
+  - [Modal Selected](/design/mobile-design-modal-selected.jpg)
+  - [Mobile Menu](/design/mobile-menu.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Repository](https://github.com/clarencejulu/crowdfunding)
+- [Live Site](https://clarencejulu.github.io/crowdfunding)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
+- HTML
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
+- SASS - CSS Preprocessor
+- Media Queries for Responsiveness
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Redux ToolKit](https://redux-toolkit.js.org/) - State Management
+- Local Storage API
+- [JSON Server](https://www.npmjs.com/package/json-server)
+- Fetch API
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+1. Redux Toolkit - This was my first time using the redux toolkit so I got to make use of the `configureStore` and `createSlice` functions as well as the `useSelector` and `useDispatch` hook.
 
-To see how you can add code snippets, see below:
+2. CSS Grid - I made use of grid-template-areas to change the position of certain elements when screen size was changed. This was my first time using this technique and it was nice to implement. 
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+    <u>Large Screen</u>
+    ```css
+    .box-content{
+      display: grid;
+      grid-template-areas: 
+      'circle heading heading . amount-left'
+      'circle description description description description';
+    }
+    ```
+    <u>Small Screen</u>
+    ```css
+    .box-content{
+      grid-template-areas: 
+        'circle heading heading heading'
+        'description description description description'
+        'amount-left . . .';
+      grid-template-columns: 2.5rem 1fr 1fr 1fr;
+    }
+    ```
+3. stopPropagation() - I used this to stop event bubbling after moving the focus of the cursor into the `input` element in the RewardBoxModal component.
+    ```js
+      const toMakeInputActive = (event) => {
+      event.stopPropagation();
+      dispatch(makeInputActive({id: pledgeButtonId, inputId: inputId}));
+    }
+    ```
+4. scrollIntoView() - The code below allowed me to scroll the page after I click on 'Select Reward'. It would take me to the corresponding id area.
+    ```js
+    if(fromModal){ document.getElementById(id).scrollIntoView(); }
+    ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+5. PATCH - I made use of the Patch request to update JSON.
+    ```js
+    const setRemainingResponse = await fetch(remainingLink + id, {
+          method: "PATCH",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({"remaining": remaining === null ? null : remaining - 1}),
+      });
+    await setRemainingResponse.json();
+    ```
+6. Local Storage in REACT - Using localstorage in react, i had to make use of the `useEffect` and `useState` hooks.
+    ```js
+    const [isBookmarked, setisBookmarked] = useState(localStorage.getItem('bookmarkStatus') === 'true');
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+    useEffect(()=> {
+        localStorage.setItem('bookmarkStatus', JSON.stringify(isBookmarked));
+    }, [isBookmarked])
+    ```
+7. removeEventListener() - For anything that is not a built-in React element-based event listener, I'd  need to do extra work for the setup and for the cleanup.
+    ```js
+    const [isSmallScreen, setIsSmallScreen] = useState(window.matchMedia("(max-width: 596px)").matches);
+
+    useEffect(()=>{
+      const mediaWatcher = window.matchMedia("(max-width: 596px)");   
+      function updateIsSmallScreen(event){
+        setIsSmallScreen(event.matches); 
+      }
+      mediaWatcher.addEventListener('change',   updateIsSmallScreen);
+
+      return function cleanup(){        mediaWatcher.removeEventListener('change', updateIsSmallScreen);
+      }
+    })
+    ```
 
 ### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+After making use of the PATCH request, I want to do more projects that may require me to POST, PUT and DELETE.  
+I'd also use CSS Grid more often as I had neglected it. This project made me realise that it's a great tool for making responsive web applications.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Redux ToolKit](https://redux-toolkit.js.org/tutorials/quick-start) - This tutorial introduced me to Redux Toolkit and taught me how to start using it correctly.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@clarencejulu](https://www.frontendmentor.io/profile/clarencejulu)
+- Github - [My Github](https://github.com/clarencejulu)
+- Website - []()
+- Twitter - []()
+- LinkedIn - [My LinkedIn Profile](https://www.linkedin.com/in/clarence-onumajulu/)
+- Indeed - []()
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+Big Thank You to my guy Hyeladi. He showed me `JSON Server` which is a way frontend developers could use a backend.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

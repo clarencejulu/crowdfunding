@@ -13,7 +13,6 @@ export const Data = () => {
     const {totalBackers, totalAmount, progress} = stats;
     const [isBookmarked, setisBookmarked] = useState(localStorage.getItem('bookmarkStatus') === 'true');
 
-
     useEffect(()=> {
         localStorage.setItem('bookmarkStatus', JSON.stringify(isBookmarked));
     }, [isBookmarked])

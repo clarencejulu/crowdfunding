@@ -12,13 +12,11 @@ export const Header = () => {
   const dispatch = useDispatch();
   const isMenu = useSelector(state => state.modal.menu);
   const [isSmallScreen, setIsSmallScreen] = useState(window.matchMedia("(max-width: 596px)").matches);
-  // const [isLargeScreen, setIsLargeScreen] = useState(window.matchMedia("(min-width: 597px)").matches);
 
   useEffect(()=>{
-    const mediaWatcher = window.matchMedia("(max-width: 596px)");
-    
+    const mediaWatcher = window.matchMedia("(max-width: 596px)");   
     function updateIsSmallScreen(event){
-      setIsSmallScreen(event.matches); //OR operator added so we can close menu
+      setIsSmallScreen(event.matches); 
     }
     mediaWatcher.addEventListener('change',   updateIsSmallScreen);
 
@@ -26,19 +24,6 @@ export const Header = () => {
       mediaWatcher.removeEventListener('change', updateIsSmallScreen);
     }
   })
-  // useEffect(()=>{
-  //   // window.matchMedia("(min-width: 596px)");
-    
-  //   function checkScreen(event){
-  //     (event.matches);
-  //   }
-
-  //   window.matchMedia("(min-width: 597px)").addEventListener('change', checkScreen);
-
-  //   return function cleanup(){
-  //     mediaWatcher.removeEventListener('change', updateIsSmallScreen);
-  //   }
-  // })
 
   return (
     <header className='header'>

@@ -8,14 +8,8 @@ import { GlobalContext } from '../context/GlobalState';
 const RewardBoxModal = ({reward}) => {
     const {id, name, price, description, remaining} = reward;
     const {stats, setRewards, setStats} = useContext(GlobalContext);
-    const {totalBackers, totalAmount, progress} = stats;
+    const {totalBackers, totalAmount} = stats;
     const dispatch = useDispatch();
-
-    // if(remaining === 0){
-    //     document.querySelectorAll('.item-unavailable').forEach( item => {
-    //         item.style.display = 'block';
-    //     })
-    // }
 
     const onHover = (event) => {
         if(event.target.parentElement.parentElement.className !== 'reward-box active'){
@@ -38,18 +32,16 @@ const RewardBoxModal = ({reward}) => {
 
     function executeSelection(){
         const value = price === null ? 1 : price;
-
         if(donation < value){
             dispatch(showNotification({price: value}));
         }
         else{
-            updateData(remaining, "http://localhost:8000/rewards/", totalAmount, totalBackers, progress, "http://localhost:8000/stats/");
-            // updateStats();
+            updateData(remaining, "http://localhost:8000/rewards/", totalAmount, totalBackers, "http://localhost:8000/stats/");
             dispatch(thankYouModal());
         }
     }
-// useEffect(() => {
-    async function updateData(remaining, remainingLink, totalAmount, totalBackers, progress, statsLink){ 
+
+    async function updateData(remaining, remainingLink, totalAmount, totalBackers, statsLink){ 
         const setRemainingResponse = await fetch(remainingLink + id, {
             method: "PATCH",
             headers: {
@@ -77,31 +69,14 @@ const RewardBoxModal = ({reward}) => {
 
         const remainingData = await getRemainingResponse.json();
         const statsData =  await getStatsResponse.json();   
-        
-
+    
         setRewards(remainingData);
         setStats(statsData);
     }
-    // async function updateStats(totalAmount, totalBackers, statsLink){ 
-    //     const response = await fetch(statsLink, {
-    //         method: "PATCH",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({"totalAmount": totalAmount + donation, "totalBackers": totalBackers + 1}),
-    //     });
-    //     await response.json();
-    //     const statsResponse = await fetch(statsLink);
-    //     const data =  await statsResponse.json();
-
-    //     setStats(data);
-    // }
-// }, [rewards, stats])
-    
 
   return (
     <div className={ name.toLowerCase().includes("mahogany") ? 'last reward-box' : 'reward-box'} id={name}>
-        <div className="item-unavailable" style={remaining !== 0 ? {display: "none"} : {display: "block"}}></div>
+        <div className="item-unavailable" style={remaining !== 0 ? {display: "none"} : {display: "block"}} />
         <div className="box-content">
             <div className={(!(name.toLowerCase().includes("pledge"))) ? 'not-first circle' : 'circle'} onMouseOver={(event)=>onHover(event)} onMouseOut={(event)=>offHover(event)} 
             onClick={() => dispatch(activateModal({id: name, fromModal: false,}))}

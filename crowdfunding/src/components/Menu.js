@@ -7,9 +7,9 @@ export const Menu = () => {
 
   return (
     <nav className='smallScreen-nav'>
-        <a href="#data" onClick={() => dispatch(offModal())}>About</a>
-        <a href="#about" onClick={() => dispatch(offModal())}>Discover</a>
-        <a href="#modal" onClick={() => dispatch(onModal())}>Get Started</a>
+      <a href="#data" onClick={() => dispatch(offModal())}>About</a>
+      <a href="#about" onClick={() => dispatch(offModal())}>Discover</a>
+      <a href="#modal" onClick={() => dispatch(onModal())}>Get Started</a>
     </nav>
   )
 }

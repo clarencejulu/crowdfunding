@@ -38,8 +38,7 @@ body{
     .headerFlexBox{
         display: flex;
         justify-content: space-between;
-        margin: auto;
-        // align-items: center; 
+        margin: auto; 
         width: 80%;
         .logo{
             @include above-overlay;

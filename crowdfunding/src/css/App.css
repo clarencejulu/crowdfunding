@@ -1131,6 +1131,7 @@ body {
 .smallScreen-nav a:last-child {
   border-bottom: none;
 }
+
 @media (max-width: 900px) {
   .header .headerFlexBox {
     width: 90%;

@@ -86,11 +86,7 @@ $border: rgba(0,0,0,0.15);
                 display: flex;
                 align-items: center;
                 padding: 0; 
-                // padding-left to allow bookmarkIcon touch the left border
                 background-color: $grey-elements;
-                // .bookmarkIcon{
-                //     // margin-left: 0;
-                // }
                 span{
                     margin-left: 1rem;
                     font-weight: 700;
@@ -101,7 +97,6 @@ $border: rgba(0,0,0,0.15);
                 opacity: 0.8;
             }
             .bookmarkButton.bookmarked{
-                // background-color: white;
                 span{
                     color: $dark-cyan;
                 }
@@ -115,7 +110,6 @@ $border: rgba(0,0,0,0.15);
                 }
             }
         }
-        
     }
 }
 .info-container{
@@ -151,8 +145,6 @@ $border: rgba(0,0,0,0.15);
         .vertical{
             width: 1px;
             height: 63px;
-            // height: 1px;
-            // width: 63px;
             background-color: $border;
         }
     }
@@ -167,11 +159,6 @@ $border: rgba(0,0,0,0.15);
             position: absolute;
             top: 0;
             left: 0;
-            // width: 80%;
-            // z-index: 2;
         }
-    }
-    
+    } 
 }
-
-
