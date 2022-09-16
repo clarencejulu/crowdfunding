@@ -36,7 +36,7 @@ const RewardBoxModal = ({reward}) => {
             dispatch(showNotification({price: value}));
         }
         else{
-            updateData(remaining, "http://localhost:8000/rewards/", totalAmount, totalBackers, "http://localhost:8000/stats/");
+            updateData(remaining, "https://crowdfunding-fake-server.herokuapp.com/rewards/", totalAmount, totalBackers, "https://crowdfunding-fake-server.herokuapp.com/stats/");
             dispatch(thankYouModal());
         }
     }

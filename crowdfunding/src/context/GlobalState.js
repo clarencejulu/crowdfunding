@@ -7,8 +7,8 @@ export const GlobalProvider = ({ children }) => {
     const [stats, setStats] = useState({});
 
     useEffect(()=> {
-        const rewardURL = 'http://localhost:8000/rewards';
-        const statsURL = 'http://localhost:8000/stats';
+        const rewardURL = 'https://crowdfunding-fake-server.herokuapp.com/rewards';
+        const statsURL = 'https://crowdfunding-fake-server.herokuapp.com/stats';
 
         async function getData(url){
             const response = await fetch(url);
