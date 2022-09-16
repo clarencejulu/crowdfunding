@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/crowdfunding/static/css/main.b06c0a5f.css",
-    "main.js": "/crowdfunding/static/js/main.e5b7eea8.js",
+    "main.js": "/crowdfunding/static/js/main.5109b0d9.js",
     "static/media/image-hero-desktop.jpg": "/crowdfunding/static/media/image-hero-desktop.631209c1fe8e34fb78c2.jpg",
     "static/media/image-hero-mobile.jpg": "/crowdfunding/static/media/image-hero-mobile.d4f477d4cd11ac3a012f.jpg",
     "static/media/logo.svg": "/crowdfunding/static/media/logo.e6f12bc6bbf5e5c65ded26ce3d2904c7.svg",
@@ -13,10 +13,10 @@
     "static/media/icon-bookmark.svg": "/crowdfunding/static/media/icon-bookmark.7777f8ecb9146d532ec6d401ce72f26e.svg",
     "static/media/icon-hamburger.svg": "/crowdfunding/static/media/icon-hamburger.f8a9f0cf12d419a7d18556f98d81a47e.svg",
     "main.b06c0a5f.css.map": "/crowdfunding/static/css/main.b06c0a5f.css.map",
-    "main.e5b7eea8.js.map": "/crowdfunding/static/js/main.e5b7eea8.js.map"
+    "main.5109b0d9.js.map": "/crowdfunding/static/js/main.5109b0d9.js.map"
   },
   "entrypoints": [
     "static/css/main.b06c0a5f.css",
-    "static/js/main.e5b7eea8.js"
+    "static/js/main.5109b0d9.js"
   ]
 }
