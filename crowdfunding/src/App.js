@@ -17,14 +17,16 @@ function App() {
   const dispatch  = useDispatch();
   return (
     <GlobalProvider>
-      <div id='container' onClick={() => dispatch(makeInputInactive())}>
+      <aside id='container' onClick={() => dispatch(makeInputInactive())}>
         {isOn ? <Modal /> : ""}
         {isThankYou ? <ThankYou /> : ""}
         <div id="wrongValue" className='notification'></div>
-      </div>
+      </aside>
       <Header />
-      <Data />
-      <About />
+      <main>
+        <Data />
+        <About />
+      </main>
     </ GlobalProvider>
   );
 }
